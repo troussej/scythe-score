@@ -1,17 +1,17 @@
 <ion-header>
 
     <ion-toolbar>
-        <ion-buttons start>
+        <!--<ion-buttons start>
             <button ion-button icon-only menuToggle>
                 <ion-icon name="menu">
                 </ion-icon>
             </button>
-        </ion-buttons>
+        </ion-buttons>-->
         <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
 
             <ng-template ngFor let-slide [ngForOf]="slides">
                 <ion-segment-button value="{{slide.id}}">
-                    <ion-icon name="{{slide.icon}}"></ion-icon>
+                    <ion-icon [name]="slide.icon"></ion-icon>
                 </ion-segment-button>
             </ng-template>
 

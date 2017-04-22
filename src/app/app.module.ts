@@ -12,7 +12,7 @@ import { ScoringPage } from '../pages/scoring/scoring.page';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { PlayerList } from '../components/scoring/players.component';
+
 import { PointSheet } from '../components/scoring/points-sheet.component';
 
 @NgModule({
@@ -21,7 +21,6 @@ import { PointSheet } from '../components/scoring/points-sheet.component';
     HomePage,
     ListPage,
     ScoringPage,
-    PlayerList,
     PointSheet
   ],
   imports: [

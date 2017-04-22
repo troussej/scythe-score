@@ -2,9 +2,11 @@
     <ion-item-divider color="light"> {{'scoring.'+definition.type|translate}}</ion-item-divider>
     <ion-item *ngFor="let player of game.players" [ngSwitch]="definition.inputType">
 
-        <ion-label fixed> {{player.name}} </ion-label>
+        <ion-label> {{player.name}} </ion-label>
 
-        <ion-input *ngSwitchCase="'number'" [(ngModel)]="player.score[definition.type]" type="phone"></ion-input>
+        <ion-input *ngSwitchCase="'number'" [ngModel]="player.score[definition.type]" type="number" (ngModelChange)="player.score[definition.type] = convertToNumber($event)">></ion-input>
+
+        <ion-input *ngSwitchCase="'static'" [(ngModel)]="player.score[definition.type]" type="number" disabled ngClass="total"></ion-input>
 
         <ion-select *ngSwitchCase="'select'" [(ngModel)]="player.score[definition.type]" interface="popover">
             <ion-option *ngFor="let i of definition.numbers">{{i}}</ion-option>
@@ -15,6 +17,11 @@
             <ion-label range-left>{{definition.min}}</ion-label>
             <ion-label range-right>{{definition.max}}</ion-label>
         </ion-range>
+
+        <label item-right *ngIf="definition.type==='stars'"> x {{player.score.starsRate}} = {{player.score.starsTotal}}</label>
+        <label item-right *ngIf="definition.type==='territories'"> x {{player.score.territoriesRate}} = {{player.score.territoriesTotal}}</label>
+        <label item-right *ngIf="definition.type==='resources'"> x {{player.score.resourcesRate}} = {{player.score.resourcesTotal}}</label>
+
 
     </ion-item>
 

@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
 import { Score } from '../../models/score.model';
 import { Game } from '../../models/game.model';
+import { config } from '../../config/config';
 import { Player } from '../../models/player.model';
 import { AlertController } from 'ionic-angular';
 import * as _ from "lodash";
@@ -19,33 +20,15 @@ export class ScoringPage {
     constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
         this.game = new Game();
+        this.game.players.push(new Player('John Bob', config));
 
-        this.selectedSegment = 'popularity';
-        this.slides = [
-            // {
-            //     id: 'players',
-            //     title: 'scoring.players',
-            //     type: 'players',
-            //     icon: 'contacts',
-            //     inputType: 'none'
-            // },
-            {
-                id: 'popularity',
-                title: 'scoring.popularity',
-                type: 'popularity',
-                icon: 'heart',
-                inputType: 'number'
-            },
-            {
-                id: 'stars',
-                title: 'scoring.stars',
-                type: 'stars',
-                icon: 'star',
-                inputType: 'number',
-                min: 0,
-                max: 6
-            }
-        ];
+
+        this.slides = config.slides;
+        //           total: number = 0;
+        // territories: number = 0;
+        // popularity: number = 0;
+        // resources: number = 0;
+        this.selectedSegment = this.slides[0].type;
 
         _.forEach(this.slides, (def) => {
             if (def.inputType === 'select') {
@@ -95,7 +78,7 @@ export class ScoringPage {
                     handler: data => {
                         if (!_.isEmpty(data.name)) {
                             console.log('save new player', data)
-                            this.game.players.push(new Player(data.name))
+                            this.game.players.push(new Player(data.name, config))
                         }
                     }
                 }

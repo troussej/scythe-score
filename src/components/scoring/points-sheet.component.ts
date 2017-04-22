@@ -13,11 +13,12 @@ export class PointSheet {
 
     @Input() game: Game;
     @Input() definition: any;
+    protected config: any = config;
 
     constructor(public alertCtrl: AlertController) {
 
     }
 
-
+    public convertToNumber(event): number { return +event; }
 
 }
