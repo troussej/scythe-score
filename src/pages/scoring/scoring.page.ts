@@ -1,8 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
+import { Score } from '../../models/score.model';
+import { Game } from '../../models/game.model';
+import { Player } from '../../models/player.model';
 
 @Component({
-    selector: 'page-slidespage',
+    selector: 'scsc-scoring-page',
     templateUrl: 'scoring.html'
 })
 export class ScoringPage {
@@ -10,26 +13,32 @@ export class ScoringPage {
     selectedSegment: string;
     slides: any;
 
+    game: Game;
+
     constructor(public navCtrl: NavController) {
-        this.selectedSegment = 'first';
+
+        this.game = new Game();
+
+        this.selectedSegment = 'players';
         this.slides = [
             {
-                id: "first",
-                title: "First Slide"
+                id: 'players',
+                title: 'scoring.players',
+                type: 'players'
             },
             {
-                id: "second",
-                title: "Second Slide"
+                id: 'second',
+                title: 'Second Slide'
             },
             {
-                id: "third",
-                title: "Third Slide"
+                id: 'third',
+                title: 'Third Slide'
             }
         ];
     }
 
     onSegmentChanged(segmentButton) {
-        console.log("Segment changed to", segmentButton.value);
+
         const selectedIndex = this.slides.findIndex((slide) => {
             return slide.id === segmentButton.value;
         });
@@ -37,10 +46,10 @@ export class ScoringPage {
     }
 
     onSlideChanged(slider) {
-        console.log(slider)
+
         const currentSlide = this.slides[slider.getActiveIndex()];
         this.selectedSegment = currentSlide.id;
-        console.log('Slide changed', currentSlide, this.selectedSegment);
+
     }
 
 }

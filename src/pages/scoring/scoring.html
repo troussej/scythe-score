@@ -1,31 +1,31 @@
-<ion-toolbar>
-    {{selectedSegment}}
-    <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
-        <ion-segment-button value="first">
-            First
-        </ion-segment-button>
-        <ion-segment-button value="second">
-            Second
-        </ion-segment-button>
-        <ion-segment-button value="third">
-            Third
-        </ion-segment-button>
-    </ion-segment>
-</ion-toolbar>
+<ion-header>
+    <ion-toolbar>
+
+        <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
+
+            <ng-template ngFor let-slide [ngForOf]="slides">
+                <ion-segment-button value="{{slide.id}}">
+                    {{slide.title|translate}}
+                </ion-segment-button>
+            </ng-template>
+
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
 
 <ion-content padding>
 
-    <ion-slides #mySlider (ionSlideDidChange)="onSlideChanged($event)">
-        <ion-slide *ngFor="let slide of slides">
-            <h1>{{ slide.title }}</h1>
+    <ion-slides #mySlider (ionSlideDidChange)="onSlideChanged($event)" [zoom]="false">
+        <ion-slide [ngClass]="'scoring-slide'" *ngFor="let slide of slides">
+            <div [ngSwitch]="slide.type">
+                <scsc-player-list [game]="game" *ngSwitchCase="'players'">
+                </scsc-player-list>
+                <div *ngSwitchDefault>
+                    {{slide.id}}
+                </div>
+            </div>
+
         </ion-slide>
     </ion-slides>
 
 </ion-content>
-
-<style>
-    ion-scroll {
-        width: 100%;
-        height: 100%;
-    }
-</style>
