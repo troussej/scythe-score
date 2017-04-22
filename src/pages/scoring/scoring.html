@@ -1,31 +1,36 @@
 <ion-header>
-    <ion-toolbar>
 
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button icon-only menuToggle>
+                <ion-icon name="menu">
+                </ion-icon>
+            </button>
+        </ion-buttons>
         <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
 
             <ng-template ngFor let-slide [ngForOf]="slides">
                 <ion-segment-button value="{{slide.id}}">
-                    {{slide.title|translate}}
+                    <ion-icon name="{{slide.icon}}"></ion-icon>
                 </ion-segment-button>
             </ng-template>
 
         </ion-segment>
+        <ion-buttons end>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-    <ion-slides #mySlider (ionSlideDidChange)="onSlideChanged($event)" [zoom]="false">
-        <ion-slide [ngClass]="'scoring-slide'" *ngFor="let slide of slides">
-            <div [ngSwitch]="slide.type">
-                <scsc-player-list [game]="game" *ngSwitchCase="'players'">
-                </scsc-player-list>
-                <div *ngSwitchDefault>
-                    {{slide.id}}
-                </div>
-            </div>
+    <div [ngSwitch]="selectedSegment" #mySlider (ionSlideDidChange)="onSlideChanged($event)">
 
-        </ion-slide>
-    </ion-slides>
-
+        <div *ngFor="let slide of slides">
+            <scsc-points-sheet [game]="game" [definition]="slide" *ngSwitchCase="slide.type">
+            </scsc-points-sheet>
+        </div>
+    </div>
+    <ion-fab right bottom>
+        <button ion-fab mini (click)="showAddPlayer()"><ion-icon name="person-add"></ion-icon></button>
+    </ion-fab>
 </ion-content>

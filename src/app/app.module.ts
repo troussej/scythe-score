@@ -13,6 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { PlayerList } from '../components/scoring/players.component';
+import { PointSheet } from '../components/scoring/points-sheet.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PlayerList } from '../components/scoring/players.component';
     HomePage,
     ListPage,
     ScoringPage,
-    PlayerList
+    PlayerList,
+    PointSheet
   ],
   imports: [
     BrowserModule,
@@ -28,9 +30,9 @@ import { PlayerList } from '../components/scoring/players.component';
     HttpModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
-      useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+      useFactory: (http: Http) => new TranslateStaticLoader(http, 'assets/i18n', '.json'),
       deps: [Http]
-    })
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

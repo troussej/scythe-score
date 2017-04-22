@@ -1,5 +1,9 @@
 {
     "home": {
-        "title": "Scythe Score"
+        "title": "Scythe Scoring App"
+    },
+    "scoring": {
+        "player-list": "Players:",
+        "players": "Players"
     }
 }

@@ -3,3 +3,18 @@
         height: 100%
     }
 }
+
+scsc-scoring-page {
+    ion-buttons[start] {
+        order: 0
+    }
+    input {
+        &[ng-reflect-type=number],
+        &[ng-reflect-type=phone] {
+            text-align: right;
+        }
+    }
+    ion-select {
+        text-align: right;
+    }
+}

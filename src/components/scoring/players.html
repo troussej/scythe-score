@@ -1,9 +1,9 @@
 <ion-list>
-    <ion-list-header> {{'scoring.player-list'|translate}}</ion-list-header>
+
+    <ion-item-divider color="light"> {{'scoring.player-list'|translate}}</ion-item-divider>
     <ion-item *ngFor="let player of game.players">
-        {{player.name}}
+
+        <ion-label fixed> {{player.name}}</ion-label>
     </ion-item>
-    <ion-fab right bottom>
-        <button ion-fab mini (click)="showAddPlayer()"><ion-icon name="add"></ion-icon></button>
-    </ion-fab>
+
 </ion-list>

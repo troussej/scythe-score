@@ -3,6 +3,7 @@ import { Player } from '../../models/player.model';
 import { Game } from '../../models/game.model';
 import { config } from '../../config/config';
 import { AlertController } from 'ionic-angular';
+import * as _ from "lodash";
 
 @Component({
     selector: 'scsc-player-list',
@@ -37,8 +38,10 @@ export class PlayerList {
                 {
                     text: 'Save',
                     handler: data => {
-                        console.log('save new player', data)
-                        this.game.players.push(new Player(data.name))
+                        if (!_.isEmpty(data.name)) {
+                            console.log('save new player', data)
+                            this.game.players.push(new Player(data.name))
+                        }
                     }
                 }
             ]
