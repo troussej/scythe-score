@@ -6,7 +6,7 @@
 
         <ion-input *ngSwitchCase="'number'" [ngModel]="player.score[definition.type]" type="number" (ngModelChange)="player.score[definition.type] = convertToNumber($event)">></ion-input>
 
-        <ion-input *ngSwitchCase="'static'" [(ngModel)]="player.score[definition.type]" type="number" disabled ngClass="total"></ion-input>
+        <ion-badge item-right *ngSwitchCase="'static'">{{player.score[definition.type]}}</ion-badge>
 
         <ion-select *ngSwitchCase="'select'" [(ngModel)]="player.score[definition.type]" interface="popover">
             <ion-option *ngFor="let i of definition.numbers">{{i}}</ion-option>
