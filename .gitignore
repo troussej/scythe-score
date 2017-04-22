@@ -27,6 +27,7 @@ coverage
 build/Release
 www/build
 www/assets
+platforms
 
 # Dependency directories
 node_modules
