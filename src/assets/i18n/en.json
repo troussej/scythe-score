@@ -4,6 +4,13 @@
     },
     "scoring": {
         "player-list": "Players:",
-        "players": "Players"
+        "players": "Players",
+        "money": "Coins at the end of the game",
+        "popularity": "Popularity",
+        "stars": "Stars",
+        "territories": "Territories",
+        "resources": "Resources",
+        "total": "Total",
+        "buildings": "Buildings"
     }
 }
