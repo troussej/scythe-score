@@ -8,7 +8,14 @@
     </ion-item-divider>
     <ion-item *ngFor="let player of game.players">
 
-        <ion-label text-capitalize> {{player.name}} </ion-label>
+        <ion-avatar item-left *ngIf="player?.faction">
+            <img src="assets/logos/{{player?.faction?.logo}}">
+        </ion-avatar>
+        <ion-label text-capitalize> {{player.name}}
+            <p text-capitalize> {{player.faction?.name}}</p>
+        </ion-label>
+
+
 
         <ion-select [(ngModel)]="player.score[definition.type]">
             <ion-option *ngFor="let entry of game.buildingRule?.rate | entries" [value]="entry.key">{{entry.key}}</ion-option>

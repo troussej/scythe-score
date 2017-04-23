@@ -1,0 +1,5 @@
+<ion-avatar item-left *ngIf="player?.faction">
+    <img src="assets/logos/{{player?.faction?.logo}}">
+</ion-avatar>
+<h2 text-capitalize> {{player.name}} </h2>
+<p text-capitalize> {{player.faction?.name}}</p>

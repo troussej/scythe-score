@@ -5,6 +5,6 @@ export class Faction {
     logo: string;
 
     constructor(obj) {
-        this.logo = _.assignIn(this, obj);
+        _.assignIn(this, obj);
     }
 }

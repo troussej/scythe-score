@@ -26,6 +26,7 @@ import { Total } from '../components/scoring/total.component';
 import { Players } from '../components/scoring/players.component';
 
 import { PlayerForm } from '../components/player/player-form.component'
+import { PlayerLine } from '../components/player/player-line.component'
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { PlayerForm } from '../components/player/player-form.component'
     Players,
     PlayerForm,
     Total,
-    RangePipe
+    RangePipe,
+    PlayerLine
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,41 @@
-<form [formGroup]="form" (ngSubmit)="dismiss(true)">
-    <ion-list>
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{'player.edit'|translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <form [formGroup]="form" (ngSubmit)="dismiss(true)">
+        <ion-list>
 
-        <ion-item>
-            <ion-label>
-                {{'player.name'|translate}}
-            </ion-label>
-            <ion-input formControlName="name" type="text">
+            <ion-item>
+                <ion-label text-capitalize>
+                    {{'player.name'|translate}}
+                </ion-label>
+                <ion-input formControlName="name" type="text" #name>
 
-            </ion-input>
-        </ion-item>
-        <ion-item>
-            <button ion-button color="dark" type="button" (click)="dismiss(false)" item-right>
+                </ion-input>
+            </ion-item>
+            <ion-list radio-group formControlName="faction">
+                <ion-item *ngFor="let entry of config.factions|entries">
+                    <ion-label text-capitalize>
+                        {{entry.key}}
+                    </ion-label>
+
+                    <ion-radio [value]="entry.value"></ion-radio>
+                </ion-item>
+
+            </ion-list>
+            <ion-item>
+                <button ion-button color="dark" type="button" (click)="dismiss(false)" item-right>
                 {{'general.cancel'|translate}}
-            </button>
-            <button ion-button type="submit" [disabled]="!form.valid" item-right>
-                {{'general.submit'|translate}}
-            </button>
-        </ion-item>
-    </ion-list>
+                </button>
+                <button ion-button type="submit" [disabled]="!form.valid" item-right>
+                    {{'general.submit'|translate}}
+                </button>
+            </ion-item>
+        </ion-list>
 
-</form>
+    </form>
+</ion-content>

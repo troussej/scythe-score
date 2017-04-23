@@ -1,14 +1,16 @@
 <ion-list>
-    <ion-item-divider color="light"> {{'scoring.'+definition.type|translate}}
-
-
+    <ion-item-divider color="light">
+        {{'scoring.'+definition.type|translate}}
     </ion-item-divider>
-
     <ion-item *ngFor="let player of game.players">
+        <ion-avatar item-left *ngIf="player?.faction">
+            <img src="assets/logos/{{player?.faction?.logo}}">
+        </ion-avatar>
+        <ion-label text-capitalize> {{player.name}}
+            <p text-capitalize> {{player.faction?.name}}</p>
+        </ion-label>
 
-        <ion-label text-capitalize> {{player.name}} </ion-label>
 
         <ion-icon item-right name="create" (click)="editPlayer(player)"></ion-icon>
     </ion-item>
-
 </ion-list>

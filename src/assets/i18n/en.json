@@ -14,6 +14,10 @@
         "buildings": "Structures",
         "buildingRules": "Structures bonus"
     },
+    "player": {
+        "name": "Name",
+        "edit": "Edit Player"
+    },
     "general": {
         "cancel": "Cancel",
         "submit": "Submit"
