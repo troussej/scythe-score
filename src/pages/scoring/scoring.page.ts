@@ -20,7 +20,7 @@ export class ScoringPage {
     constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
         this.game = new Game();
-        this.game.players.push(new Player('John Bob', config));
+        this.game.players.push(new Player('John Bob', this.game, config));
 
 
         this.slides = config.slides;
@@ -30,13 +30,9 @@ export class ScoringPage {
         // resources: number = 0;
         this.selectedSegment = this.slides[0].type;
 
-        _.forEach(this.slides, (def) => {
-            if (def.inputType === 'select') {
-                def.numbers = Array(def.max - def.min)
-                    .fill(0)
-                    .map((x, i) => i + def.min);
-            }
-        })
+
+
+        console.log('game', this.game);
     }
 
     onSegmentChanged(segmentButton) {
@@ -78,7 +74,7 @@ export class ScoringPage {
                     handler: data => {
                         if (!_.isEmpty(data.name)) {
                             console.log('save new player', data)
-                            this.game.players.push(new Player(data.name, config))
+                            this.game.players.push(new Player(data.name, this.game, config))
                         }
                     }
                 }

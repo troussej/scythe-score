@@ -20,8 +20,5 @@
     "node_modules"
   ],
   "compileOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  },
   "debug": true
 }

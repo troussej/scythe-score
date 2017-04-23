@@ -5,12 +5,13 @@
     "scoring": {
         "player-list": "Players:",
         "players": "Players",
-        "money": "Coins at the end of the game",
+        "money": "Coins in hand",
         "popularity": "Popularity",
-        "stars": "Stars",
-        "territories": "Territories",
-        "resources": "Resources",
+        "stars": "Star tokens",
+        "territories": "Controlled territories",
+        "resources": "Controlled resources",
         "total": "Total",
-        "buildings": "Buildings"
+        "buildings": "Structures",
+        "buildingRules": "Structures bonus"
     }
 }

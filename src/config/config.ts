@@ -20,14 +20,18 @@ export const config: any = {
             title: 'scoring.popularity',
             type: 'popularity',
             icon: 'heart',
-            inputType: 'number'
+            inputType: 'select',
+            min: 0,
+            max: 18
         },
         {
             id: 'stars',
             title: 'scoring.stars',
             type: 'stars',
             icon: 'star',
-            inputType: 'number'
+            inputType: 'select',
+            min: 0,
+            max: 6
         },
         {
             id: 'territories',
@@ -50,7 +54,7 @@ export const config: any = {
             title: 'scoring.buildings',
             type: 'buildings',
             icon: 'home',
-            inputType: 'number'
+            inputType: 'building'
 
         },
         {
@@ -135,5 +139,84 @@ export const config: any = {
     factions: {
         red: {},
         green: {}
-    }
+    },
+    buildingCards: [
+        {
+
+            description: 'Tunnels adjacent to structures',
+            rate: {
+                0: 0,
+                1: 2,
+                2: 4,
+                3: 4,
+                4: 6,
+                5: 6,
+                6: 9
+            }
+        },
+        {
+
+            description: 'Lakes adjacent to structures',
+            rate: {
+                0: 0,
+                1: 2,
+                2: 4,
+                3: 4,
+                4: 6,
+                5: 6,
+                6: 9,
+                7: 9
+            }
+        },
+        {
+
+            description: 'Encounters adjacent to structures',
+            rate: {
+                0: 0,
+                1: 2,
+                2: 4,
+                3: 4,
+                4: 6,
+                5: 6,
+                6: 9,
+                7: 9
+            }
+        },
+        {
+
+            description: 'Tunnels with structures on them',
+            rate: {
+                0: 0,
+                1: 2,
+                2: 4,
+                3: 6,
+                4: 6
+
+            }
+        },
+        {
+
+            description: 'Structures in a row',
+            rate: {
+                0: 0,
+                1: 2,
+                2: 4,
+                3: 6,
+                4: 9
+
+            }
+        },
+        {
+
+            description: 'Farms/Tundras with structures on them',
+            rate: {
+                0: 0,
+                1: 2,
+                2: 4,
+                3: 6,
+                4: 9
+
+            }
+        },
+    ]
 }

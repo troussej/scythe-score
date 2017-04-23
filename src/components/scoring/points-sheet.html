@@ -1,5 +1,14 @@
 <ion-list>
-    <ion-item-divider color="light"> {{'scoring.'+definition.type|translate}}</ion-item-divider>
+    <ion-item-divider color="light" *ngIf="definition.type!=='buildings'"> {{'scoring.'+definition.type|translate}}
+
+
+    </ion-item-divider>
+    <ion-item-divider color="light" *ngIf="definition.type==='buildings'">
+        <ion-label text-capitalize> {{'scoring.buildingRules'|translate}} </ion-label>
+        <ion-select [(ngModel)]="game.buildingRule">
+            <ion-option *ngFor="let buildingRule of config.buildingCards" [value]="buildingRule">{{buildingRule.description}}</ion-option>
+        </ion-select>
+    </ion-item-divider>
     <ion-item *ngFor="let player of game.players" [ngSwitch]="definition.inputType">
 
         <ion-label text-capitalize> {{player.name}} </ion-label>
@@ -8,8 +17,12 @@
 
         <ion-badge item-right *ngSwitchCase="'static'">{{player.score[definition.type]}}</ion-badge>
 
-        <ion-select *ngSwitchCase="'select'" [(ngModel)]="player.score[definition.type]" interface="popover">
-            <ion-option *ngFor="let i of definition.numbers">{{i}}</ion-option>
+        <ion-select *ngSwitchCase="'select'" [(ngModel)]="player.score[definition.type]">
+            <ion-option *ngFor="let i of definition | range:definition.min:definition.max " [value]="i">{{i}}</ion-option>
+        </ion-select>
+
+        <ion-select *ngSwitchCase="'building'" [(ngModel)]="player.score[definition.type]">
+            <ion-option *ngFor="let entry of game.buildingRule?.rate | entries" [value]="entry.key">{{entry.key}}</ion-option>
         </ion-select>
 
         <ion-range *ngSwitchCase="'range'" snaps="true" min="{{definition.min}}" max="{{definition.max}}" [(ngModel)]="player.score[definition.type]"
@@ -26,6 +39,9 @@
 
         <label item-right *ngIf="definition.type==='resources'">/ 2 x {{player.score.resourcesRate}} =</label>
         <ion-badge item-right *ngIf="definition.type==='resources'">{{player.score.resourcesTotal}} </ion-badge>
+
+        <label item-right *ngIf="definition.type==='buildings'">  <ion-icon name="arrow-round-forward"></ion-icon> </label>
+        <ion-badge item-right *ngIf="definition.type==='buildings'">{{player.score.buildingsTotal}} </ion-badge>
 
     </ion-item>
 

@@ -19,6 +19,9 @@ export class PointSheet {
 
     }
 
+
+
     public convertToNumber(event): number { return +event; }
+
 
 }

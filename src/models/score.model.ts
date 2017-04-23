@@ -1,3 +1,5 @@
+import { Game } from './game.model';
+import * as _ from "lodash";
 export class Score {
 
     territories: number = 0;
@@ -7,9 +9,10 @@ export class Score {
     stars: number = 0;
     config: any;
     buildings: number = 0;
-
-    constructor(config: any) {
+    game: Game;
+    constructor(game: Game, config: any) {
         this.config = config;
+        this.game = game;
     }
     //  rules: {
     //         points: {
@@ -34,7 +37,21 @@ export class Score {
     get resourcesTotal(): number {
         return Math.floor(this.resources / 2) * this.resourcesRate;
     }
+
+    get buildingsTotal(): number {
+        let val = 0;
+        try {
+            val = this.game.buildingRule.rate[this.buildings];
+        } catch (e) {
+            val = 0;
+        }
+        if (!_.isNumber(val)) {
+            val = 0;
+        }
+        return val;
+    }
+
     get total(): number {
-        return this.money + this.starsTotal + this.territoriesTotal + this.resourcesTotal;
+        return this.money + this.starsTotal + this.territoriesTotal + this.resourcesTotal + this.buildingsTotal;
     }
 }

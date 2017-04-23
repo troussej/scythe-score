@@ -11,7 +11,8 @@ import { ScoringPage } from '../pages/scoring/scoring.page';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { EntriesPipe } from '../pipes/entries.pipe';
+import { RangePipe } from '../pipes/range.pipe';
 
 import { PointSheet } from '../components/scoring/points-sheet.component';
 
@@ -21,7 +22,9 @@ import { PointSheet } from '../components/scoring/points-sheet.component';
     HomePage,
     ListPage,
     ScoringPage,
-    PointSheet
+    PointSheet,
+    EntriesPipe,
+    RangePipe
   ],
   imports: [
     BrowserModule,
