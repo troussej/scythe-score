@@ -23,27 +23,41 @@
 
 <ion-content>
 
-    <div #mySlider ngClass="score-sheets" (ionSlideDidChange)="onSlideChanged($event)" [ngSwitch]="selectedSegment">
+    <ion-slides #mySlider ngClass="score-sheets scoring-slide" (ionSlideDidChange)="onSlideChanged($event)" [ngSwitch]="selectedSegment">
+        <ion-slide>
+            <scsc-players [game]="game" [definition]="slides['players']">
+            </scsc-players>
+        </ion-slide>
+        <ion-slide>
+            <scsc-coins [game]="game" [definition]="slides['money']">
+            </scsc-coins>
+        </ion-slide>
+        <ion-slide>
+            <scsc-stars [game]="game" [definition]="slides['stars']">
+            </scsc-stars>
+        </ion-slide>
+        <ion-slide>
+            <scsc-popularity [game]="game" [definition]="slides['popularity']">
+            </scsc-popularity>
+        </ion-slide>
+        <ion-slide>
+            <scsc-territories [game]="game" [definition]="slides['territories']">
+            </scsc-territories>
+        </ion-slide>
+        <ion-slide>
+            <scsc-resources [game]="game" [definition]="slides['resources']">
+            </scsc-resources>
+        </ion-slide>
+        <ion-slide>
+            <scsc-buildings [game]="game" [definition]="slides['buildings']">
+            </scsc-buildings>
+        </ion-slide>
+        <ion-slide>
+            <scsc-total [game]="game" [definition]="slides['total']">
+            </scsc-total>
+        </ion-slide>
 
-        <scsc-players [game]="game" [definition]="slides['players']" *ngSwitchCase="'players'">
-        </scsc-players>
-        <scsc-coins [game]="game" [definition]="slides['money']" *ngSwitchCase="'money'">
-        </scsc-coins>
-        <scsc-stars [game]="game" [definition]="slides['stars']" *ngSwitchCase="'stars'">
-        </scsc-stars>
-        <scsc-popularity [game]="game" [definition]="slides['popularity']" *ngSwitchCase="'popularity'">
-        </scsc-popularity>
-        <scsc-territories [game]="game" [definition]="slides['territories']" *ngSwitchCase="'territories'">
-        </scsc-territories>
-        <scsc-resources [game]="game" [definition]="slides['resources']" *ngSwitchCase="'resources'">
-        </scsc-resources>
-        <scsc-buildings [game]="game" [definition]="slides['buildings']" *ngSwitchCase="'buildings'">
-        </scsc-buildings>
-        <scsc-total [game]="game" [definition]="slides['total']" *ngSwitchCase="'total'">
-        </scsc-total>
-
-
-    </div>
+    </ion-slides>
     {{game.factoryOwner|json}}
     <ion-fab right bottom>
         <button ion-fab (click)="showAddPlayer()"><ion-icon name="person-add"></ion-icon></button>

@@ -26,6 +26,11 @@ export class ScoringPage {
 
 
         this.slides = config.slides;
+        let i = 0;
+        _.forEach(this.slides, s => {
+            s.index = i;
+            i++;
+        })
 
         this.selectedSegment = 'players';
 
@@ -36,18 +41,16 @@ export class ScoringPage {
 
     onSegmentChanged(segmentButton) {
 
-        // const selectedIndex = this.slides.findIndex((slide) => {
-        //     return slide.id === segmentButton.value;
-        // });
-        // this.slider.slideTo(selectedIndex);
+        const slide: any = this.slides[segmentButton.value];
+        this.slider.slideTo(slide.index);
     }
 
     onSlideChanged(slider) {
-
-        // const currentSlide = this.slides[slider.getActiveIndex()];
-        // if (currentSlide) {
-        //     this.selectedSegment = currentSlide.id;
-        // }
+        const current = slider.getActiveIndex();
+        const currentSlide: any = _.find(this.slides, { index: current })
+        if (currentSlide) {
+            this.selectedSegment = currentSlide.type;
+        }
 
     }
 
