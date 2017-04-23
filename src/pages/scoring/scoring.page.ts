@@ -1,10 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, Slides } from 'ionic-angular';
+import { NavController, Slides ,AlertController} from 'ionic-angular';
 import { Score } from '../../models/score.model';
 import { Game } from '../../models/game.model';
 import { config } from '../../config/config';
 import { Player } from '../../models/player.model';
-import { AlertController } from 'ionic-angular';
 import * as _ from "lodash";
 @Component({
     selector: 'scsc-scoring-page',
