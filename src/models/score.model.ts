@@ -9,6 +9,7 @@ export class Score {
     stars: number = 0;
     config: any;
     buildings: number = 0;
+    ownsFactory: boolean = false;
     game: Game;
     constructor(game: Game, config: any) {
         this.config = config;
@@ -38,10 +39,10 @@ export class Score {
         return Math.floor(this.resources / 2) * this.resourcesRate;
     }
 
-    get buildingsTotal(): number {
+    getBuildingsTotal(buildingRule): number {
         let val = 0;
         try {
-            val = this.game.buildingRule.rate[this.buildings];
+            val = buildingRule.rate[this.buildings];
         } catch (e) {
             val = 0;
         }
@@ -51,7 +52,7 @@ export class Score {
         return val;
     }
 
-    get total(): number {
-        return this.money + this.starsTotal + this.territoriesTotal + this.resourcesTotal + this.buildingsTotal;
+    getTotal(buildingRule): number {
+        return this.money + this.starsTotal + this.territoriesTotal + this.resourcesTotal + this.getBuildingsTotal(buildingRule);
     }
 }

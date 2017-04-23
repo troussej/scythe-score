@@ -5,7 +5,7 @@
     "scoring": {
         "player-list": "Players:",
         "players": "Players",
-        "money": "Coins in hand",
+        "coins": "Coins in hand",
         "popularity": "Popularity",
         "stars": "Star tokens",
         "territories": "Controlled territories",

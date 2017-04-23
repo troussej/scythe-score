@@ -21,8 +21,8 @@
             <ion-option *ngFor="let entry of game.buildingRule?.rate | entries" [value]="entry.key">{{entry.key}}</ion-option>
         </ion-select>
 
-        <label item-right *ngIf="definition.type==='buildings'">  <ion-icon name="arrow-round-forward"></ion-icon> </label>
-        <ion-badge item-right *ngIf="definition.type==='buildings'" [color]="player?.faction?.colorName">{{player.score.buildingsTotal}} </ion-badge>
+        <label item-right>  <ion-icon name="arrow-round-forward"></ion-icon> </label>
+        <ion-badge item-right [color]="player?.faction?.colorName">{{player.score.getBuildingsTotal(game.buildingRule)}} </ion-badge>
 
     </ion-item>
 

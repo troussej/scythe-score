@@ -14,10 +14,16 @@
 
 
 
+
+
+        <!--<ion-label item-right> {{'player.factory'|translate}}
+
+        </ion-label>-->
+
+
+        <!--<ion-toggle item-right [(ngModel)]="player.score.ownsFactory" [color]="player?.faction?.colorName" (ionChange)="updateFactoryOwner($event,player)">
+        </ion-toggle>-->
         <ion-input [ngModel]="player.score[definition.type]" type="number" (ngModelChange)="player.score[definition.type] = convertToNumber($event)">></ion-input>
-
-
-
         <label item-right> x {{player.score.territoriesRate}} =</label>
         <ion-badge item-right [color]="player?.faction?.colorName">{{player.score.territoriesTotal}} </ion-badge>
 
