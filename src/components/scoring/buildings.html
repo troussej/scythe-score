@@ -1,0 +1,22 @@
+<ion-list>
+
+    <ion-item-divider color="light">
+        <ion-label text-capitalize> {{'scoring.buildingRules'|translate}} </ion-label>
+        <ion-select [(ngModel)]="game.buildingRule">
+            <ion-option *ngFor="let buildingRule of config.buildingCards" [value]="buildingRule">{{buildingRule.description}}</ion-option>
+        </ion-select>
+    </ion-item-divider>
+    <ion-item *ngFor="let player of game.players">
+
+        <ion-label text-capitalize> {{player.name}} </ion-label>
+
+        <ion-select [(ngModel)]="player.score[definition.type]">
+            <ion-option *ngFor="let entry of game.buildingRule?.rate | entries" [value]="entry.key">{{entry.key}}</ion-option>
+        </ion-select>
+
+        <label item-right *ngIf="definition.type==='buildings'">  <ion-icon name="arrow-round-forward"></ion-icon> </label>
+        <ion-badge item-right *ngIf="definition.type==='buildings'">{{player.score.buildingsTotal}} </ion-badge>
+
+    </ion-item>
+
+</ion-list>

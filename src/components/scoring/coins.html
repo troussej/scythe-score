@@ -1,0 +1,13 @@
+<ion-list>
+    <ion-item-divider color="light"> {{'scoring.coins'|translate}}
+    </ion-item-divider>
+
+    <ion-item *ngFor="let player of game.players">
+
+        <ion-label text-capitalize> {{player.name}} </ion-label>
+
+        <ion-input [ngModel]="player.score.money" type="number" (ngModelChange)="player.score.money = convertToNumber($event)">></ion-input>
+
+    </ion-item>
+
+</ion-list>

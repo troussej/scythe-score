@@ -28,7 +28,7 @@ export class ScoringPage {
         // territories: number = 0;
         // popularity: number = 0;
         // resources: number = 0;
-        this.selectedSegment = this.slides[0].type;
+        this.selectedSegment = 'money';
 
 
 

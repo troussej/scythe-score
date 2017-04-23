@@ -1,0 +1,20 @@
+<ion-list>
+    <ion-item-divider color="light"> {{'scoring.'+definition.type|translate}}
+
+
+    </ion-item-divider>
+    <ion-item *ngFor="let player of game.players">
+
+        <ion-label text-capitalize> {{player.name}} </ion-label>
+
+        <ion-input [ngModel]="player.score[definition.type]" type="number" (ngModelChange)="player.score[definition.type] = convertToNumber($event)">></ion-input>
+
+
+
+        <label item-right> x {{player.score.territoriesRate}} =</label>
+        <ion-badge item-right>{{player.score.territoriesTotal}} </ion-badge>
+
+
+    </ion-item>
+
+</ion-list>

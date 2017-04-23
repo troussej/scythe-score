@@ -9,9 +9,9 @@
         </ion-buttons>-->
         <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
 
-            <ng-template ngFor let-slide [ngForOf]="slides">
-                <ion-segment-button value="{{slide.id}}">
-                    <ion-icon [name]="slide.icon"></ion-icon>
+            <ng-template ngFor let-entry [ngForOf]="slides |entries">
+                <ion-segment-button [value]="entry.key">
+                    <ion-icon [name]="slides[entry.key].icon"></ion-icon>
                 </ion-segment-button>
             </ng-template>
 
@@ -23,12 +23,25 @@
 
 <ion-content>
 
-    <div [ngSwitch]="selectedSegment" #mySlider (ionSlideDidChange)="onSlideChanged($event)">
+    <div #mySlider (ionSlideDidChange)="onSlideChanged($event)" [ngSwitch]="selectedSegment">
 
-        <div *ngFor="let slide of slides">
-            <scsc-points-sheet [game]="game" [definition]="slide" *ngSwitchCase="slide.type">
-            </scsc-points-sheet>
-        </div>
+
+        <scsc-coins [game]="game" [definition]="slides['money']" *ngSwitchCase="'money'">
+        </scsc-coins>
+        <scsc-stars [game]="game" [definition]="slides['stars']" *ngSwitchCase="'stars'">
+        </scsc-stars>
+        <scsc-popularity [game]="game" [definition]="slides['popularity']" *ngSwitchCase="'popularity'">
+        </scsc-popularity>
+        <scsc-territories [game]="game" [definition]="slides['territories']" *ngSwitchCase="'territories'">
+        </scsc-territories>
+        <scsc-resources [game]="game" [definition]="slides['resources']" *ngSwitchCase="'resources'">
+        </scsc-resources>
+        <scsc-buildings [game]="game" [definition]="slides['buildings']" *ngSwitchCase="'buildings'">
+        </scsc-buildings>
+        <scsc-total [game]="game" [definition]="slides['total']" *ngSwitchCase="'total'">
+        </scsc-total>
+
+
     </div>
     <ion-fab right bottom>
         <button ion-fab mini (click)="showAddPlayer()"><ion-icon name="person-add"></ion-icon></button>

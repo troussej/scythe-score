@@ -15,6 +15,13 @@ import { EntriesPipe } from '../pipes/entries.pipe';
 import { RangePipe } from '../pipes/range.pipe';
 
 import { PointSheet } from '../components/scoring/points-sheet.component';
+import { Coins } from '../components/scoring/coins.component';
+import { Stars } from '../components/scoring/stars.component';
+import { Popularity } from '../components/scoring/popularity.component';
+import { Territories } from '../components/scoring/territories.component';
+import { Buildings } from '../components/scoring/buildings.component';
+import { Resources } from '../components/scoring/resources.component';
+import { Total } from '../components/scoring/total.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +31,13 @@ import { PointSheet } from '../components/scoring/points-sheet.component';
     ScoringPage,
     PointSheet,
     EntriesPipe,
+    Coins,
+    Stars,
+    Popularity,
+    Territories,
+    Buildings,
+    Resources,
+    Total,
     RangePipe
   ],
   imports: [

@@ -1,6 +1,6 @@
 export const config: any = {
 
-    slides: [
+    slides: {
         // {
         //     id: 'players',
         //     title: 'scoring.players',
@@ -8,14 +8,14 @@ export const config: any = {
         //     icon: 'contacts',
         //     inputType: 'none'
         // },
-        {
+        money: {
             id: 'money',
             title: 'scoring.money',
             type: 'money',
             icon: 'logo-usd',
             inputType: 'number'
         },
-        {
+        popularity: {
             id: 'popularity',
             title: 'scoring.popularity',
             type: 'popularity',
@@ -24,7 +24,7 @@ export const config: any = {
             min: 0,
             max: 18
         },
-        {
+        stars: {
             id: 'stars',
             title: 'scoring.stars',
             type: 'stars',
@@ -33,7 +33,7 @@ export const config: any = {
             min: 0,
             max: 6
         },
-        {
+        territories: {
             id: 'territories',
             title: 'scoring.territories',
             type: 'territories',
@@ -41,7 +41,7 @@ export const config: any = {
             inputType: 'number'
 
         },
-        {
+        resources: {
             id: 'resources',
             title: 'scoring.resources',
             type: 'resources',
@@ -49,7 +49,7 @@ export const config: any = {
             inputType: 'number'
 
         },
-        {
+        buildings: {
             id: 'buildings',
             title: 'scoring.buildings',
             type: 'buildings',
@@ -57,7 +57,7 @@ export const config: any = {
             inputType: 'building'
 
         },
-        {
+        total: {
             id: 'total',
             title: 'scoring.total',
             type: 'total',
@@ -66,7 +66,7 @@ export const config: any = {
             min: 0,
             max: 6
         }
-    ],
+    },
     rules: {
         points: {
             stars: {
