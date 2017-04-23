@@ -4,6 +4,7 @@ import { HttpModule, Http } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
+import { PlayerService } from '../services/player.service';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -24,6 +25,8 @@ import { Resources } from '../components/scoring/resources.component';
 import { Total } from '../components/scoring/total.component';
 import { Players } from '../components/scoring/players.component';
 
+import { PlayerForm } from '../components/player/player-form.component'
+
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { Players } from '../components/scoring/players.component';
     Buildings,
     Resources,
     Players,
+    PlayerForm,
     Total,
     RangePipe
   ],
@@ -58,12 +62,14 @@ import { Players } from '../components/scoring/players.component';
     MyApp,
     HomePage,
     ListPage,
-    ScoringPage
+    ScoringPage,
+    PlayerForm
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    PlayerService
   ]
 })
 export class AppModule { }

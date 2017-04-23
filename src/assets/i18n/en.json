@@ -13,5 +13,9 @@
         "total": "Total",
         "buildings": "Structures",
         "buildingRules": "Structures bonus"
+    },
+    "general": {
+        "cancel": "Cancel",
+        "submit": "Submit"
     }
 }

@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="dismiss(true)">
+    <ion-list>
+
+        <ion-item>
+            <ion-label>
+                {{'player.name'|translate}}
+            </ion-label>
+            <ion-input formControlName="name" type="text">
+
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <button ion-button color="dark" type="button" (click)="dismiss(false)" item-right>
+                {{'general.cancel'|translate}}
+            </button>
+            <button ion-button type="submit" [disabled]="!form.valid" item-right>
+                {{'general.submit'|translate}}
+            </button>
+        </ion-item>
+    </ion-list>
+
+</form>

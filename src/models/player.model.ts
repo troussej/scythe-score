@@ -6,7 +6,7 @@ export class Player {
     config: any;
     game: Game;
 
-    constructor(name: String, game: Game, config: any) {
+    constructor(config: any, game: Game, name?: String, ) {
         this.name = name;
         this.game = game;
         this.config = config;

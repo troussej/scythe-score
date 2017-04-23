@@ -1,3 +1,4 @@
+import { Faction } from '../models/faction.model';
 export const config: any = {
 
     slides: {
@@ -134,8 +135,41 @@ export const config: any = {
         }
     },
     factions: {
-        red: {},
-        green: {}
+        albion: new Faction({
+            logo: 'scsc-logo-small-albion.png',
+            name: 'Albion',
+            color: '#437261'
+        }),
+        crimea: new Faction({
+            logo: 'scsc-logo-small-crimea.png',
+            name: 'crimea',
+            color: '#edae55'
+        }),
+        nordic: new Faction({
+            logo: 'scsc-logo-small-nordic.png',
+            name: 'nordic',
+            color: '#02b3fd'
+        }),
+        polania: new Faction({
+            logo: 'scsc-logo-small-polania.png',
+            name: 'polania',
+            color: '#fcffff'
+        }),
+        rusviet: new Faction({
+            logo: 'scsc-logo-small-rusviet.png',
+            name: 'rusviet',
+            color: '#f94d74'
+        }),
+        saxony: new Faction({
+            logo: 'scsc-logo-small-saxony.png',
+            name: 'saxony',
+            color: '#403d49'
+        }),
+        togawa: new Faction({
+            logo: 'scsc-logo-small-togawa.png',
+            name: 'togawa',
+            color: '#925ec7'
+        })
     },
     buildingCards: [
         {

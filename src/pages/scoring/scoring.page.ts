@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, Slides ,AlertController} from 'ionic-angular';
+import { NavController, Slides, AlertController } from 'ionic-angular';
 import { Score } from '../../models/score.model';
 import { Game } from '../../models/game.model';
 import { config } from '../../config/config';
 import { Player } from '../../models/player.model';
+import { PlayerService } from '../../services/player.service';
 import * as _ from "lodash";
 @Component({
     selector: 'scsc-scoring-page',
@@ -16,10 +17,12 @@ export class ScoringPage {
 
     game: Game;
 
-    constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+    constructor(public navCtrl: NavController,
+        private service: PlayerService,
+        public alertCtrl: AlertController) {
 
         this.game = new Game();
-        this.game.players.push(new Player('John Bob', this.game, config));
+        this.game.players.push(new Player(config, this.game, 'John Bob'));
 
 
         this.slides = config.slides;
@@ -52,34 +55,7 @@ export class ScoringPage {
     }
 
     showAddPlayer(): void {
-        let prompt = this.alertCtrl.create({
-            title: 'Add player',
-
-            inputs: [
-                {
-                    name: 'name',
-                    placeholder: 'Name'
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    handler: data => {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Save',
-                    handler: data => {
-                        if (!_.isEmpty(data.name)) {
-                            console.log('save new player', data)
-                            this.game.players.push(new Player(data.name, this.game, config))
-                        }
-                    }
-                }
-            ]
-        });
-        prompt.present();
+        this.service.addPlayer(this.game);
 
     }
 
