@@ -13,7 +13,7 @@
 
 
 
-        <ion-input [ngModel]="player.score.money" type="number" (ngModelChange)="player.score.money = convertToNumber($event)">></ion-input>
+        <ion-input [color]="player?.faction?.colorName" type="number" (ngModelChange)="player.score.money = convertToNumber($event)"></ion-input>
 
     </ion-item>
 

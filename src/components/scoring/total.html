@@ -14,7 +14,7 @@
 
 
 
-        <ion-badge item-right>{{player.score[definition.type]}}</ion-badge>
+        <ion-badge item-right [color]="player?.faction?.colorName">{{player.score[definition.type]}}</ion-badge>
 
     </ion-item>
 

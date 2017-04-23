@@ -138,37 +138,44 @@ export const config: any = {
         albion: new Faction({
             logo: 'scsc-logo-small-albion.png',
             name: 'Albion',
-            color: '#437261'
+            color: '#437261',
+            colorName: 'albion'
         }),
         crimea: new Faction({
             logo: 'scsc-logo-small-crimea.png',
             name: 'crimea',
-            color: '#edae55'
+            color: '#edae55',
+            colorName: 'crimea'
         }),
         nordic: new Faction({
             logo: 'scsc-logo-small-nordic.png',
             name: 'nordic',
-            color: '#02b3fd'
+            color: '#02b3fd',
+            colorName: 'nordic'
         }),
         polania: new Faction({
             logo: 'scsc-logo-small-polania.png',
             name: 'polania',
-            color: '#fcffff'
+            color: '#fcffff',
+            colorName: 'polania'
         }),
         rusviet: new Faction({
             logo: 'scsc-logo-small-rusviet.png',
             name: 'rusviet',
-            color: '#f94d74'
+            color: '#f94d74',
+            colorName: 'rusviet'
         }),
         saxony: new Faction({
             logo: 'scsc-logo-small-saxony.png',
             name: 'saxony',
-            color: '#403d49'
+            color: '#403d49',
+            colorName: 'saxony'
         }),
         togawa: new Faction({
             logo: 'scsc-logo-small-togawa.png',
             name: 'togawa',
-            color: '#925ec7'
+            color: '#925ec7',
+            colorName: 'togawa'
         })
     },
     buildingCards: [

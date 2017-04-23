@@ -22,7 +22,7 @@
 
 
         <label item-right>/ 2 x {{player.score.resourcesRate}} =</label>
-        <ion-badge item-right>{{player.score.resourcesTotal}} </ion-badge>
+        <ion-badge item-right [color]="player?.faction?.colorName">{{player.score.resourcesTotal}} </ion-badge>
 
 
 

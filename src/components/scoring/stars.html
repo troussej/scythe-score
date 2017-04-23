@@ -21,7 +21,7 @@
 
 
         <label item-right> x {{player.score.starsRate}} = </label>
-        <ion-badge item-right>{{player.score.starsTotal}} </ion-badge>
+        <ion-badge item-right [color]="player?.faction?.colorName">{{player.score.starsTotal}} </ion-badge>
 
     </ion-item>
 

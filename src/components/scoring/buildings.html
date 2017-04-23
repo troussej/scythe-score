@@ -22,7 +22,7 @@
         </ion-select>
 
         <label item-right *ngIf="definition.type==='buildings'">  <ion-icon name="arrow-round-forward"></ion-icon> </label>
-        <ion-badge item-right *ngIf="definition.type==='buildings'">{{player.score.buildingsTotal}} </ion-badge>
+        <ion-badge item-right *ngIf="definition.type==='buildings'" [color]="player?.faction?.colorName">{{player.score.buildingsTotal}} </ion-badge>
 
     </ion-item>
 

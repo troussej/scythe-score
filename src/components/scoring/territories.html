@@ -19,7 +19,7 @@
 
 
         <label item-right> x {{player.score.territoriesRate}} =</label>
-        <ion-badge item-right>{{player.score.territoriesTotal}} </ion-badge>
+        <ion-badge item-right [color]="player?.faction?.colorName">{{player.score.territoriesTotal}} </ion-badge>
 
 
     </ion-item>
