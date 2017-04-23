@@ -15,3 +15,9 @@ scsc-scoring-page {
         }
     }
 }
+
+scsc-player-form {
+    $text-input-md-show-focus-highlight: true;
+    $text-input-wp-show-focus-highlight: true;
+    $text-input-ios-show-focus-highlight: true;
+}

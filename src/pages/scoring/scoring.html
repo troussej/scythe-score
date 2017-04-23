@@ -23,7 +23,7 @@
 
 <ion-content>
 
-    <div #mySlider (ionSlideDidChange)="onSlideChanged($event)" [ngSwitch]="selectedSegment">
+    <div #mySlider ngClass="score-sheets" (ionSlideDidChange)="onSlideChanged($event)" [ngSwitch]="selectedSegment">
 
         <scsc-players [game]="game" [definition]="slides['players']" *ngSwitchCase="'players'">
         </scsc-players>

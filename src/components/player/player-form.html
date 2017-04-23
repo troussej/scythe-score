@@ -10,20 +10,21 @@
         <ion-list>
 
             <ion-item>
-                <ion-label text-capitalize>
-                    {{'player.name'|translate}}
-                </ion-label>
-                <ion-input formControlName="name" type="text" #name>
+
+                <ion-input text-capitalize formControlName="name" type="text" placeholder="{{'player.name'|translate}}" #name>
 
                 </ion-input>
             </ion-item>
             <ion-list radio-group formControlName="faction">
                 <ion-item *ngFor="let entry of config.factions|entries">
+                    <ion-avatar item-left>
+                        <img src="assets/logos/{{entry.value.logo}}">
+                    </ion-avatar>
                     <ion-label text-capitalize>
                         {{entry.key}}
                     </ion-label>
 
-                    <ion-radio [value]="entry.value"></ion-radio>
+                    <ion-radio [color]="entry.value.colorName" [value]="entry.value"></ion-radio>
                 </ion-item>
 
             </ion-list>

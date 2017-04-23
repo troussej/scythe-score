@@ -28,7 +28,7 @@ export class PlayerForm {
         this.player = this.navParams.get('player');
         this.form = this.fb.group({
             'name': [this.player.name, Validators.compose([Validators.required, Validators.minLength(1)])],
-            'faction': [this.player.faction]
+            'faction': [this.player.faction, Validators.required]
         })
     }
 
