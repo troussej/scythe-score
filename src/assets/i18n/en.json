@@ -12,7 +12,8 @@
         "resources": "Controlled resources",
         "total": "Total",
         "buildings": "Structures",
-        "buildingRules": "Structures bonus"
+        "buildingRules": "Structures bonus",
+        "factoryHint": "Remember, the Factory counts as 3 territories"
     },
     "player": {
         "name": "Name",
