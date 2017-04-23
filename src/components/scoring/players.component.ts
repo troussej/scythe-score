@@ -19,6 +19,14 @@ export class Players extends PointSheet {
         this.service.editPlayer(player);
 
     }
+
+
+    deletePlayer(player: Player): void {
+        this.service.deletePlayer(this.game, player);
+
+    }
+
+
 }
 
 

@@ -4,7 +4,7 @@ import { Player } from '../models/player.model'
 import { Game } from '../models/game.model'
 import { PlayerForm } from '../components/player/player-form.component'
 import { config } from '../config/config';
-
+import * as _ from "lodash";
 @Injectable()
 export class PlayerService {
 
@@ -30,5 +30,9 @@ export class PlayerService {
 
     private createPrompt(player: Player): any {
         return this.modalCtrl.create(PlayerForm, { player: player });
+    }
+
+    deletePlayer(game: Game, player: Player) {
+        _.remove(game.players, (p) => _.eq(p, player));
     }
 }
