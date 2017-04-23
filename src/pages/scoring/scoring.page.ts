@@ -59,5 +59,40 @@ export class ScoringPage {
 
     }
 
+    refreshGame(): void {
+        let prompt = this.alertCtrl.create({
+            message: 'Start a new game?',
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel'
+
+                },
+                {
+                    text: 'Ok',
+                    handler: data => {
+                        console.log('refreshGame', data)
+                        let oldGame = this.game;
+                        this.game = new Game();
+                        if (data[0] === 'keepPlayers') {
+                            this.game.players = _.map(oldGame.players, p => {
+                                return new Player(config, this.game, p.name);
+                            })
+                        }
+                    }
+                }
+            ],
+            inputs: [
+                {
+                    label: 'Same players',
+                    name: 'keepPlayers',
+                    type: 'checkbox',
+                    value: 'keepPlayers'
+                }
+            ]
+        })
+        prompt.present();
+    }
+
 
 }

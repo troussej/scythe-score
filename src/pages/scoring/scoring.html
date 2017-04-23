@@ -1,12 +1,21 @@
 <ion-header>
-
-    <ion-toolbar>
-        <!--<ion-buttons start>
-            <button ion-button icon-only menuToggle>
+    <ion-navbar>
+        <ion-title>
+            {{'scoring.title'|translate}}
+        </ion-title>
+        <ion-buttons end>
+            <!--<button ion-button icon-only menuToggle>
                 <ion-icon name="menu">
                 </ion-icon>
+            </button>-->
+            <button ion-button icon-only (click)="refreshGame()">
+                <ion-icon name="refresh">
+                </ion-icon>
             </button>
-        </ion-buttons>-->
+        </ion-buttons>
+    </ion-navbar>
+    <ion-toolbar>
+
         <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
 
             <ng-template ngFor let-entry [ngForOf]="slides |entries">
