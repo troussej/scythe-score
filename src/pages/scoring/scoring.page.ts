@@ -22,14 +22,11 @@ export class ScoringPage {
         public alertCtrl: AlertController) {
 
         this.game = new Game();
-        this.game.players.push(new Player(config, this.game, 'John Bob'));
+        // this.game.players.push(new Player(config, this.game, 'John Bob'));
 
 
         this.slides = config.slides;
-        //           total: number = 0;
-        // territories: number = 0;
-        // popularity: number = 0;
-        // resources: number = 0;
+
         this.selectedSegment = 'players';
 
 
