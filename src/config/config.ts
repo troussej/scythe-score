@@ -1,70 +1,67 @@
 export const config: any = {
 
     slides: {
-        // {
-        //     id: 'players',
-        //     title: 'scoring.players',
-        //     type: 'players',
-        //     icon: 'contacts',
-        //     inputType: 'none'
-        // },
+        players: {
+            type: 'players',
+            title: 'scoring.players',
+            icon: 'contacts',
+
+        },
         money: {
-            id: 'money',
-            title: 'scoring.money',
             type: 'money',
+            title: 'scoring.money',
+
             icon: 'logo-usd',
-            inputType: 'number'
+
         },
         popularity: {
-            id: 'popularity',
-            title: 'scoring.popularity',
             type: 'popularity',
+            title: 'scoring.popularity',
+
             icon: 'heart',
-            inputType: 'select',
+
             min: 0,
             max: 18
         },
         stars: {
-            id: 'stars',
-            title: 'scoring.stars',
             type: 'stars',
+            title: 'scoring.stars',
+
             icon: 'star',
-            inputType: 'select',
+
             min: 0,
             max: 6
         },
         territories: {
-            id: 'territories',
+
             title: 'scoring.territories',
             type: 'territories',
             icon: 'flag',
-            inputType: 'number'
+
 
         },
         resources: {
-            id: 'resources',
+
             title: 'scoring.resources',
             type: 'resources',
-            icon: 'cube',
-            inputType: 'number'
+            icon: 'cube'
+
 
         },
         buildings: {
-            id: 'buildings',
+
             title: 'scoring.buildings',
             type: 'buildings',
-            icon: 'home',
-            inputType: 'building'
+            icon: 'home'
+
 
         },
         total: {
-            id: 'total',
+
             title: 'scoring.total',
             type: 'total',
-            icon: 'trophy',
-            inputType: 'static',
-            min: 0,
-            max: 6
+            icon: 'trophy'
+
         }
     },
     rules: {

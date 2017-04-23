@@ -22,6 +22,8 @@ import { Territories } from '../components/scoring/territories.component';
 import { Buildings } from '../components/scoring/buildings.component';
 import { Resources } from '../components/scoring/resources.component';
 import { Total } from '../components/scoring/total.component';
+import { Players } from '../components/scoring/players.component';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { Total } from '../components/scoring/total.component';
     Territories,
     Buildings,
     Resources,
+    Players,
     Total,
     RangePipe
   ],

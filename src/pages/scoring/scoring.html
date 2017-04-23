@@ -25,7 +25,8 @@
 
     <div #mySlider (ionSlideDidChange)="onSlideChanged($event)" [ngSwitch]="selectedSegment">
 
-
+        <scsc-players [game]="game" [definition]="slides['players']" *ngSwitchCase="'players'">
+        </scsc-players>
         <scsc-coins [game]="game" [definition]="slides['money']" *ngSwitchCase="'money'">
         </scsc-coins>
         <scsc-stars [game]="game" [definition]="slides['stars']" *ngSwitchCase="'stars'">

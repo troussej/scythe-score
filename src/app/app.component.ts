@@ -6,7 +6,6 @@ import { TranslateService } from 'ng2-translate';
 
 import { HomePage } from '../pages/home/home';
 import { ScoringPage } from '../pages/scoring/scoring.page';
-import { ListPage } from '../pages/list/list';
 
 @Component({
   templateUrl: 'app.html'
