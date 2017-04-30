@@ -31,7 +31,33 @@
 </ion-header>
 
 <ion-content>
+    <div #mySlider ngClass="score-sheets" (ionSlideDidChange)="onSlideChanged($event)" [ngSwitch]="selectedSegment">
 
+        <scsc-players [game]="game" [definition]="slides['players']" *ngSwitchCase="'players'">
+        </scsc-players>
+
+        <scsc-coins [game]="game" [definition]="slides['money']" *ngSwitchCase="'money'">
+        </scsc-coins>
+
+        <scsc-stars [game]="game" [definition]="slides['stars']" *ngSwitchCase="'stars'">
+        </scsc-stars>
+
+        <scsc-popularity [game]="game" [definition]="slides['popularity']" *ngSwitchCase="'popularity'">
+        </scsc-popularity>
+
+        <scsc-territories [game]="game" [definition]="slides['territories']" *ngSwitchCase="'territories'">
+        </scsc-territories>
+
+        <scsc-resources [game]="game" [definition]="slides['resources']" *ngSwitchCase="'resources'">
+        </scsc-resources>
+
+        <scsc-buildings [game]="game" [definition]="slides['buildings']" *ngSwitchCase="'buildings'">
+        </scsc-buildings>
+
+        <scsc-total [game]="game" [definition]="slides['total']" *ngSwitchCase="'total'">
+        </scsc-total>
+    </div>
+    <!--</div>
     <ion-slides #mySlider ngClass="score-sheets scoring-slide" (ionSlideDidChange)="onSlideChanged($event)" [ngSwitch]="selectedSegment">
         <ion-slide>
             <scsc-players [game]="game" [definition]="slides['players']">
@@ -66,7 +92,7 @@
             </scsc-total>
         </ion-slide>
 
-    </ion-slides>
+    </ion-slides>-->
     {{game.factoryOwner|json}}
     <ion-fab right bottom>
         <button ion-fab (click)="showAddPlayer()"><ion-icon name="person-add"></ion-icon></button>

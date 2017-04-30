@@ -41,16 +41,16 @@ export class ScoringPage {
 
     onSegmentChanged(segmentButton) {
 
-        const slide: any = this.slides[segmentButton.value];
-        this.slider.slideTo(slide.index);
+        // const slide: any = this.slides[segmentButton.value];
+        // this.slider.slideTo(slide.index);
     }
 
     onSlideChanged(slider) {
-        const current = slider.getActiveIndex();
-        const currentSlide: any = _.find(this.slides, { index: current })
-        if (currentSlide) {
-            this.selectedSegment = currentSlide.type;
-        }
+        // const current = slider.getActiveIndex();
+        // const currentSlide: any = _.find(this.slides, { index: current })
+        // if (currentSlide) {
+        //     this.selectedSegment = currentSlide.type;
+        // }
 
     }
 
